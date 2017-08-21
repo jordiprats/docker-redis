@@ -38,9 +38,13 @@ RUN mkdir -p /opt/masterless/datadir
 
 RUN bash /opt/masterless/bin/localpuppetmaster.sh -d /opt/masterless/datadir eyp-redis
 
+RUN bash /opt/masterless/bin/localpuppetmaster.sh -d /opt/masterless/datadir -s /opt/masterless/etc/redis.pp
+
 #
 # publish
 #
+
+CMD [ "/usr/bin/redis-server", "/etc/redis/redis-6380.conf" ]
 
 VOLUME ["/var/lib/redis-6380"]
 
