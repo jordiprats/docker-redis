@@ -28,12 +28,15 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install puppet -y
 # puppet masterless
 #
 
-RUN mkdir -p /opt/puppet-masterless
-RUN git clone https://github.com/jordiprats/puppet-masterless /opt/puppet-masterless
+RUN mkdir -p /opt/masterless/bin
+RUN git clone https://github.com/jordiprats/puppet-masterless /opt/masterless/bin
 
-RUN mkdir -p /opt/masterless-data
-COPY redis.pp /opt/masterless-data
+RUN mkdir -p /opt/masterless/etc
+COPY redis.pp /opt/masterless/etc
 
+RUN mkdir -p /opt/masterless/datadir
+
+RUN bash /opt/masterless/bin/localpuppetmaster.sh -d /opt/masterless/datadir eyp-redis
 
 #
 # publish
