@@ -44,8 +44,8 @@ RUN bash /opt/masterless/bin/localpuppetmaster.sh -d /opt/masterless/datadir -s 
 # publish
 #
 
-CMD [ "/usr/bin/redis-server", "/etc/redis/redis-6380.conf" ]
+CMD [ "/usr/bin/redis-server", "/etc/redis/redis-6379.conf" ]
 
-VOLUME ["/var/lib/redis-6380"]
+VOLUME ["/var/lib/redis-6379"]
 
 EXPOSE 6380

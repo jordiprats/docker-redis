@@ -1,6 +1,6 @@
 
 class { 'redis': }
 
-redis::instance { '6380':
+redis::instance { '6379':
   daemonize => false,
 }
