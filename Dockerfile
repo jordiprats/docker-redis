@@ -48,4 +48,4 @@ CMD [ "/usr/bin/redis-server", "/etc/redis/redis-6379.conf" ]
 
 VOLUME ["/var/lib/redis-6379"]
 
-EXPOSE 6380
+EXPOSE 6379
